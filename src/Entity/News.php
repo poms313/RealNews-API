@@ -24,6 +24,9 @@ class News
     #[ORM\Column(type: 'text')]
     private $resume;
 
+    #[ORM\Column(type: 'datetime')]
+    private $publicationDate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class News
     public function setResume(string $resume): self
     {
         $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getPublicationDate(): ?\DateTimeInterface
+    {
+        return $this->publicationDate;
+    }
+
+    public function setPublicationDate(\DateTimeInterface $publicationDate): self
+    {
+        $this->publicationDate = $publicationDate;
 
         return $this;
     }
